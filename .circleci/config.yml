@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/node:latest
+    steps:
+      - checkout
+      - run: npm install
+      - run: CI=true npm run build
+
+workflows:
+  build:
+    jobs:
+      - build
