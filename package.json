@@ -15,6 +15,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx pretty-quick --staged"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -40,10 +45,5 @@
     "husky": "^4.3.0",
     "prettier": "^2.2.0",
     "pretty-quick": "^3.1.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }
