@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router";
 
 export default function TestIpts() {
   const [name, setName] = React.useState<string>("");
@@ -7,6 +8,8 @@ export default function TestIpts() {
   const [fam, setFam] = React.useState<string>("");
   const [category, setCategory] = React.useState<string>("");
   const [color, setColor] = React.useState<string>("");
+
+  const history = useHistory();
 
   const handleNameIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
     setName(e.target.value);
@@ -23,7 +26,7 @@ export default function TestIpts() {
   const handleFoodItemSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    let newFoodEntry = {
+    let newFormEntry = {
       name,
       type,
       grp,
@@ -32,16 +35,18 @@ export default function TestIpts() {
       color,
     };
 
-    fetch("/", {
+    fetch("/foods", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
       },
-      body: JSON.stringify(newFoodEntry),
+      body: JSON.stringify(newFormEntry),
     })
       .then((r) => r.json())
       .then((r) => {
         console.log(r);
+        history.push("/");
       });
   };
 
