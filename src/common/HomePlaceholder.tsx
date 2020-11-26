@@ -1,7 +1,8 @@
 import React from "react";
 
-const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
-  const [placeholder, setPlaceholder] = React.useState(null);
+const HomeTemplate: React.FC = (props) => {
+  // const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
+  //   const [placeholder, setPlaceholder] = React.useState(null);
 
   React.useEffect(() => {}, []);
 
@@ -12,6 +13,6 @@ const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
   );
 };
 
-interface HomeTemplateProps {}
+// interface HomeTemplateProps {}
 
 export default HomeTemplate;
