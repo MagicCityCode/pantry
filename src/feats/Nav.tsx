@@ -4,18 +4,22 @@ import { NavLink } from "react-router-dom";
 const Nav: React.FC = () => {
   return (
     <nav>
-      {/* <NavLink exact to="/">
+      <NavLink exact to="/">
         Home
-      </NavLink> */}
+      </NavLink>
+      <br />
       {/* <NavLink exact to="/register">
         Register
       </NavLink> */}
+      {/* <br/> */}
       {/* <NavLink exact to="/login">
         Login
       </NavLink> */}
+      {/* <br/> */}
       <NavLink exact to="/testfoodinput">
         Test Food Input
       </NavLink>
+      <br />
     </nav>
   );
 };
