@@ -51,54 +51,61 @@ export default function TestIpts() {
   };
 
   return (
-    <div className="container">
-      <div className="row row--align-center">
-        <div className="col col--4">
-          <form className="form--dark">
-            <input
-              value={name}
-              type="text"
-              placeholder="Name"
-              onChange={handleNameIpt}
-            />
-            <br />
-            <input
-              value={type}
-              type="text"
-              placeholder="Type"
-              onChange={handleTypeIpt}
-            />
-            <br />
-            <input
-              value={grp}
-              type="text"
-              placeholder="Group"
-              onChange={handleGrpIpt}
-            />
-            <br />
-            <input
-              value={fam}
-              type="text"
-              placeholder="Family"
-              onChange={handleFamIpt}
-            />
-            <br />
-            <input
-              value={category}
-              type="text"
-              placeholder="Category"
-              onChange={handleCategoryIpt}
-            />
-            <br />
-            <input
-              value={color}
-              type="text"
-              placeholder="Color"
-              onChange={handleColorIpt}
-            />
-            <br />
-            <button onClick={handleFoodItemSubmit}>Submit Test Food</button>
-          </form>
+    <div className="row row--align-center row--justify-center">
+      <div className="card-demo margin-vert--md">
+        <div className="card">
+          <div className="col col--4">
+            <div className="card__body">
+              <input
+                className="form-input margin-bottom--md"
+                value={name}
+                type="text"
+                placeholder="Name"
+                onChange={handleNameIpt}
+              />
+              <input
+                className="form-input margin-bottom--md"
+                value={type}
+                type="text"
+                placeholder="Type"
+                onChange={handleTypeIpt}
+              />
+              <input
+                className="form-input margin-bottom--md"
+                value={grp}
+                type="text"
+                placeholder="Group"
+                onChange={handleGrpIpt}
+              />
+              <input
+                className="form-input margin-bottom--md"
+                value={fam}
+                type="text"
+                placeholder="Family"
+                onChange={handleFamIpt}
+              />
+              <input
+                className="form-input margin-bottom--md"
+                value={category}
+                type="text"
+                placeholder="Category"
+                onChange={handleCategoryIpt}
+              />
+              <input
+                className="form-input margin-bottom--md"
+                value={color}
+                type="text"
+                placeholder="Color"
+                onChange={handleColorIpt}
+              />
+              <button
+                className="button button--outline button--primary"
+                onClick={handleFoodItemSubmit}
+              >
+                Submit Test Food
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

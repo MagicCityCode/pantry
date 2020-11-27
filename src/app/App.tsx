@@ -1,12 +1,19 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import Nav from "../feats/Nav";
+import Foot from "../common/Foot";
+import Nav from "../common/Nav";
 import Routes from "./Routes";
+import Div100vh from "react-div-100vh";
 
 const App: React.FC<{}> = () => (
   <BrowserRouter>
-    <Nav />
-    <Routes />
+    <Div100vh>
+      <Nav />
+      <div className="container">
+        <Routes />
+      </div>
+      <Foot />
+    </Div100vh>
   </BrowserRouter>
 );
 
