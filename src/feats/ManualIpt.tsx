@@ -1,8 +1,9 @@
 // Copy over from TestIpts
 import React from "react";
 
-const ManualInventoryIpt: React.FC<ManualInventoryIptProps> = (props) => {
-  const [placeholder, setPlaceholder] = React.useState(null);
+// const ManualInventoryIpt: React.FC<ManualInventoryIptProps> = (props) => {
+const ManualInventoryIpt: React.FC = (props) => {
+  // const [placeholder, setPlaceholder] = React.useState(null);
 
   React.useEffect(() => {}, []);
 
@@ -13,6 +14,6 @@ const ManualInventoryIpt: React.FC<ManualInventoryIptProps> = (props) => {
   );
 };
 
-interface ManualInventoryIptProps {}
+// interface ManualInventoryIptProps {}
 
 export default ManualInventoryIpt;

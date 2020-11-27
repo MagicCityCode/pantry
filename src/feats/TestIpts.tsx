@@ -51,52 +51,56 @@ export default function TestIpts() {
   };
 
   return (
-    <div>
-      <form>
-        <input
-          value={name}
-          type="text"
-          placeholder="Name"
-          onChange={handleNameIpt}
-        />
-        <br />
-        <input
-          value={type}
-          type="text"
-          placeholder="Type"
-          onChange={handleTypeIpt}
-        />
-        <br />
-        <input
-          value={grp}
-          type="text"
-          placeholder="Group"
-          onChange={handleGrpIpt}
-        />
-        <br />
-        <input
-          value={fam}
-          type="text"
-          placeholder="Family"
-          onChange={handleFamIpt}
-        />
-        <br />
-        <input
-          value={category}
-          type="text"
-          placeholder="Category"
-          onChange={handleCategoryIpt}
-        />
-        <br />
-        <input
-          value={color}
-          type="text"
-          placeholder="Color"
-          onChange={handleColorIpt}
-        />
-        <br />
-        <button onClick={handleFoodItemSubmit}>Submit Test Food</button>
-      </form>
+    <div className="container">
+      <div className="row row--align-center">
+        <div className="col col--4">
+          <form className="form--dark">
+            <input
+              value={name}
+              type="text"
+              placeholder="Name"
+              onChange={handleNameIpt}
+            />
+            <br />
+            <input
+              value={type}
+              type="text"
+              placeholder="Type"
+              onChange={handleTypeIpt}
+            />
+            <br />
+            <input
+              value={grp}
+              type="text"
+              placeholder="Group"
+              onChange={handleGrpIpt}
+            />
+            <br />
+            <input
+              value={fam}
+              type="text"
+              placeholder="Family"
+              onChange={handleFamIpt}
+            />
+            <br />
+            <input
+              value={category}
+              type="text"
+              placeholder="Category"
+              onChange={handleCategoryIpt}
+            />
+            <br />
+            <input
+              value={color}
+              type="text"
+              placeholder="Color"
+              onChange={handleColorIpt}
+            />
+            <br />
+            <button onClick={handleFoodItemSubmit}>Submit Test Food</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
