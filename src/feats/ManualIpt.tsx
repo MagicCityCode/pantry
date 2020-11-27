@@ -2,7 +2,7 @@
 import React from "react";
 
 // const ManualInventoryIpt: React.FC<ManualInventoryIptProps> = (props) => {
-const ManualInventoryIpt: React.FC = (props) => {
+const ManualInventoryIpt: React.FC = () => {
   // const [placeholder, setPlaceholder] = React.useState(null);
 
   React.useEffect(() => {}, []);

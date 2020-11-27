@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./css/custom.css";
+import "./css/infima.css";
+import "./css/index.css";
 import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
 
