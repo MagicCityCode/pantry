@@ -13,7 +13,7 @@ const Foot: React.FC = () => {
             GitHub
           </a>
         </div>
-        <div>Pantry Boss</div>
+        <div>PantryBoss</div>
       </div>
     </footer>
   );
