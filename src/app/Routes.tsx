@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Switch, Route, RouteProps, Redirect } from "react-router-dom";
-import HomeTemplate from "../common/HomePlaceholder";
+import Home from "../common/Home";
 import TestIpts from "../feats/TestIpts";
 
 const Routes: React.FC<RouteProps> = () => {
@@ -9,7 +9,7 @@ const Routes: React.FC<RouteProps> = () => {
       <Suspense fallback={<div></div>}>
         <Switch>
           <Route exact path="/">
-            <HomeTemplate />
+            <Home />
           </Route>
           <Route exact path="/testfoodinput">
             <TestIpts />

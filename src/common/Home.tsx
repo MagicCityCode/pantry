@@ -8,13 +8,17 @@ if (!envFound) {
   throw new Error("env file not found");
 }
 
-// const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
-const HomeTemplate: React.FC = () => {
+// const Home: React.FC<Home> = (props) => {
+const Home: React.FC = () => {
   useEffect(() => {
     const API_KEY = String(process.env.REACT_APP_SPOONACULAR_KEY);
 
     let secondQueryParam = "";
 
+    // http://limedaley.com/post/amazon-fresh-api
+    // https://www.amazon.com/afx/ingredients/verify
+
+    // Connect to Spoonacular API
     let requestString =
       "https://api.spoonacular.com/food/jokes/random" +
       "?apiKey=" +
@@ -47,6 +51,6 @@ const HomeTemplate: React.FC = () => {
   );
 };
 
-// interface HomeTemplateProps {}
+// interface Home {}
 
-export default HomeTemplate;
+export default Home;
