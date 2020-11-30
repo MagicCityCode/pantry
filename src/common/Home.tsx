@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     let secondQueryParam = "";
 
     // http://limedaley.com/post/amazon-fresh-api
-    // https://www.amazon.com/afx/ingredients/verify
+    // Once hear back from AMZN dev support: test JSON at https://www.amazon.com/afx/ingredients/verify
 
     // Connect to Spoonacular API
     let requestString =
