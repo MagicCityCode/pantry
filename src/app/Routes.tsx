@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Switch, Route, RouteProps, Redirect } from "react-router-dom";
 import Home from "../common/Home";
 import TestIpts from "../feats/TestIpts";
+import ImageReader from "../feats/ImageReader";
 
 const Routes: React.FC<RouteProps> = () => {
   return (
@@ -13,6 +14,9 @@ const Routes: React.FC<RouteProps> = () => {
           </Route>
           <Route exact path="/testfoodinput">
             <TestIpts />
+          </Route>
+          <Route exact path="/imageInput">
+            <ImageReader />
           </Route>
           <Redirect from="*" to="/" />
         </Switch>
