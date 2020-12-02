@@ -22,6 +22,9 @@ const Nav: React.FC = () => {
           >
             Test Food Input
           </NavLink>
+          <NavLink className="navbar__item navbar__link" exact to="/imageInput">
+            Image Input
+          </NavLink>
         </div>
         <div className="navbar__items navbar__items--right">
           <form>
