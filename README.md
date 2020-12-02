@@ -106,26 +106,26 @@ List through which to iterate when approaching each new feature:
 3. Meals - food name(s), amount(s), instructions
 4. Order - status
 5. For consideration:
-  * Add ability for user to set avg inv lvls want to keep in stock off which to base reorder recommendations_
-  * _Later on, allow interfacing w/ order precise status through which to forecast precise availability rather than placeholder 3-day logic_
-  * _Make a grocery list pg/view that auto-populates from in-need items but also allows manual editing/appending_
-  * _Add barcode/UPC scan_
-  * _Delineate (but default to most common) whether each food item is stored in freezer, pantry, fridge (have this dictate exp)_
-  * _Track data of wasted food (uncooked prior to expiry)_
+   * Add ability for user to set avg inv lvls want to keep in stock off which to base reorder recommendations_
+   * _Later on, allow interfacing w/ order precise status through which to forecast precise availability rather than placeholder 3-day logic_
+   * _Make a grocery list pg/view that auto-populates from in-need items but also allows manual editing/appending_
+   * _Add barcode/UPC scan_
+   * _Delineate (but default to most common) whether each food item is stored in freezer, pantry, fridge (have this dictate exp)_
+   * _Track data of wasted food (uncooked prior to expiry)_
 
 ### BEHAVIOR (APP)
 1. FEATURE: Photo food input
-  * AS A user, I WANT to take a photo of my receipt, SO THAT my pantry inventory is updated
+   * AS A user, I WANT to take a photo of my receipt, SO THAT my pantry inventory is updated
 2. FEATURE: Amazon account sync
-  * AS A user, I WANT to send needed food to Amazon cart, SO THAT I don’t have to pick up food myself
+   * AS A user, I WANT to send needed food to Amazon cart, SO THAT I don’t have to pick up food myself
 3. FEATURE: Personal kitchen/pantry inventory/profile
-  * AS A user, I WANT to see the food I have in my house, SO THAT I can eat it when needed
-  * AS A user, I WANT to have my food saved, SO THAT I do not have to manually reenter every time I use the app
-  * AS A user, I WANT to be notified when food is depleted/expiration, SO THAT I can restock as needed
-  * AS A user, I WANT to see all depleted foods as their own menu, SO THAT I know to order more food
-  * AS A user, I WANT Amazon order one click away on depleted foods menu, SO THAT it’s fast
-  * FEATURE: Available/planned meals
-  * AS A user, I WANT to see the meals I can make from my inventory, SO THAT I can save time, $, effort, research, etc.
+   * AS A user, I WANT to see the food I have in my house, SO THAT I can eat it when needed
+   * AS A user, I WANT to have my food saved, SO THAT I do not have to manually reenter every time I use the app
+   * AS A user, I WANT to be notified when food is depleted/expiration, SO THAT I can restock as needed
+   * AS A user, I WANT to see all depleted foods as their own menu, SO THAT I know to order more food
+   * AS A user, I WANT Amazon order one click away on depleted foods menu, SO THAT it’s fast
+4. FEATURE: Available/planned meals
+   * AS A user, I WANT to see the meals I can make from my inventory, SO THAT I can save time, $, effort, research, etc.
 ### LAYOUT (INTERFACE)
 - Meals for the day
   * *Click meal* Pulls up recipes
