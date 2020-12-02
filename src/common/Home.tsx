@@ -33,10 +33,8 @@ const Home: React.FC = () => {
       >
         Generate Food Joke
       </button> */}
-      <h4>
-        {"Here's a random joke from Spoonacular; are you not entertained?" +
-          joke}
-      </h4>
+      <h3>Here's a random joke from Spoonacular; are you not entertained?</h3>
+      <h4>{joke}</h4>
     </div>
   );
 };
