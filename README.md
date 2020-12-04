@@ -13,7 +13,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - https://web.dev/react/
   - https://www.robinwieruch.de/react-libraries
   - https://github.com/airbnb/javascript/tree/master/react
-- Infima/Bootstrap - interface/CSS
+- [Infima](https://facebookincubator.github.io/infima/)/Bootstrap - interface/CSS styling
 - TypeScript/JS - https://react-typescript-cheatsheet.netlify.app/
 - Python - for data / image-processing
 - Node + Express.js
@@ -153,4 +153,5 @@ List through which to iterate when approaching each new feature:
   - _Click_ Pulls up camera with receipt taking instructions
     - Option to opt out of photo
     - Photo fills out manual form with option to update themselves
+
 - Think about how to make any manual inputs/mods as easy for user; eg scrollable options rather than blanks into which must type from scratch
