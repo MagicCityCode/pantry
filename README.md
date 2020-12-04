@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## ROUGH-DRAFT PROJECT PLAN (REFINE)
+## ROUGH-DRAFT PROJECT PLAN
 
 - Overall good thoughts: https://github.com/elsewhencode/project-guidelines
 
@@ -39,7 +39,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - CircleCI - automated code deploys
 - Responsively - display preview
 
-### NOT-MVP -- things to hit later
+### NOT-MVP (ADDRESS LATER)
 
 - Docker - maintain environment stability (potentially add to MVP...TBD)
 - Jest & Enzyme - testing -- Create **Test** folder w/in each component’s directory housing .test files
@@ -153,4 +153,5 @@ List through which to iterate when approaching each new feature:
   - _Click_ Pulls up camera with receipt taking instructions
     - Option to opt out of photo
     - Photo fills out manual form with option to update themselves
-- Think ab how to make any manual inputs/mods as easy for user; eg scrollable options rather than blanks into which must type from scratch
+
+- Think about how to make any manual inputs/mods as easy for user; eg scrollable options rather than blanks into which must type from scratch
