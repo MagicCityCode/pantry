@@ -1,6 +1,6 @@
 # PantryBoss Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [CRA](https://github.com/facebook/create-react-app).
 
 ## ROUGH-DRAFT PROJECT PLAN
 
@@ -150,6 +150,7 @@ List through which to iterate when approaching each new feature:
   - _Click “add food” circle_ pulls up prompt - “Add food to amazon cart?” _click yes_ takes user to Amazon page with food in cart
   - Common food item has higher depletion rate
 - Add food
+
   - _Click_ Pulls up camera with receipt taking instructions
     - Option to opt out of photo
     - Photo fills out manual form with option to update themselves
