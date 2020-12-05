@@ -3,7 +3,9 @@ import { Switch, Route, RouteProps, Redirect } from "react-router-dom";
 import Home from "../common/Home";
 import TestIpts from "../feats/TestIpts";
 import ImageReader from "../feats/ImageReader";
+import PrivateRoute from "../common/PrivateRoute";
 
+// Remember to protect new fuctionality with PrivateRoute
 const Routes: React.FC<RouteProps> = () => {
   return (
     <div>
@@ -12,9 +14,9 @@ const Routes: React.FC<RouteProps> = () => {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/testfoodinput">
+          <PrivateRoute exact path="/testfoodinput">
             <TestIpts />
-          </Route>
+          </PrivateRoute>
           <Route exact path="/imageInput">
             <ImageReader />
           </Route>
