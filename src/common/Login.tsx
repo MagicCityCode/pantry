@@ -9,7 +9,7 @@ import { STORAGE_KEY } from "../utils/api-service";
 
 const Login: React.FC = () => {
   const history = useHistory();
-  const { state } = useLocation<{ msg: string }>();
+  // const { state } = useLocation<{ msg: string }>();
   const [values, setValues] = React.useState<{ [key: string]: string }>({
     // email: 'test@test.com',
     // password: 'password'
@@ -18,7 +18,7 @@ const Login: React.FC = () => {
 
   React.useEffect(() => {
     // console.log(state);
-    setErr(state?.msg);
+    // setErr(state?.msg);
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
