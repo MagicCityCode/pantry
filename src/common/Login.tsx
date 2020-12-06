@@ -1,10 +1,11 @@
 import * as React from "react";
-import { useHistory, useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Alert from "react-bootstrap/Alert";
+// import Alert from 'react-bootstrap/Alert';
 import { STORAGE_KEY } from "../utils/api-service";
 
 const Login: React.FC = () => {
@@ -14,7 +15,7 @@ const Login: React.FC = () => {
     // email: 'test@test.com',
     // password: 'password'
   });
-  const [err, setErr] = React.useState<string>("");
+  // const [err, setErr] = React.useState<string>('');
 
   React.useEffect(() => {
     // console.log(state);
@@ -84,7 +85,7 @@ const Login: React.FC = () => {
             Login
           </Button>
         </Form>
-        {err && <Alert variant="danger">{err}</Alert>}
+        {/* {err && <Alert variant="danger">{err}</Alert>} */}
       </Col>
     </Row>
   );
