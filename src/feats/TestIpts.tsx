@@ -3,39 +3,34 @@ import { useHistory } from "react-router";
 
 export default function TestIpts() {
   const [name, setName] = React.useState<string>("");
-  const [type, setType] = React.useState<string>("");
-  const [grp, setGrp] = React.useState<string>("");
-  const [fam, setFam] = React.useState<string>("");
-  const [category, setCategory] = React.useState<string>("");
-  const [color, setColor] = React.useState<string>("");
-
+  const [shelfLife, setShelfLife] = React.useState<string>("");
+  const [shelfLifeUnit, setShelfLifeUnit] = React.useState<string>("");
+  const [stg, setStg] = React.useState<string>("");
+  const [uom, setUom] = React.useState<string>("");
   const history = useHistory();
 
   const handleNameIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
     setName(e.target.value);
-  const handleTypeIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setType(e.target.value);
-  const handleGrpIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setGrp(e.target.value);
-  const handleFamIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setFam(e.target.value);
-  const handleCategoryIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setCategory(e.target.value);
-  const handleColorIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setColor(e.target.value);
-  const handleFoodItemSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleShelfLifeIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setShelfLife(e.target.value);
+  const handleShelfLifeUnitIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setShelfLifeUnit(e.target.value);
+  const handleStgIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setStg(e.target.value);
+  const handleUomIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setUom(e.target.value);
+  const handleIngredientSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     let newFormEntry = {
       name,
-      type,
-      grp,
-      fam,
-      category,
-      color,
+      shelfLife,
+      shelfLifeUnit,
+      stg,
+      uom,
     };
 
-    fetch("/foods", {
+    fetch("/ingredients", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,44 +60,37 @@ export default function TestIpts() {
               />
               <input
                 className="form-input margin-bottom--md"
-                value={type}
+                value={shelfLife}
                 type="text"
-                placeholder="Type"
-                onChange={handleTypeIpt}
+                placeholder="Shelf life"
+                onChange={handleShelfLifeIpt}
               />
               <input
                 className="form-input margin-bottom--md"
-                value={grp}
+                value={shelfLifeUnit}
                 type="text"
-                placeholder="Group"
-                onChange={handleGrpIpt}
+                placeholder="Shelf life unit (e.g. days, weeks, years)"
+                onChange={handleShelfLifeUnitIpt}
               />
               <input
                 className="form-input margin-bottom--md"
-                value={fam}
+                value={stg}
                 type="text"
-                placeholder="Family"
-                onChange={handleFamIpt}
+                placeholder="Storage type (e.g. refrigerator, pantry, freezer)"
+                onChange={handleStgIpt}
               />
               <input
                 className="form-input margin-bottom--md"
-                value={category}
+                value={uom}
                 type="text"
-                placeholder="Category"
-                onChange={handleCategoryIpt}
-              />
-              <input
-                className="form-input margin-bottom--md"
-                value={color}
-                type="text"
-                placeholder="Color"
-                onChange={handleColorIpt}
+                placeholder="Unit of measure (e.g. ounces, liters, pounds)"
+                onChange={handleUomIpt}
               />
               <button
                 className="button button--outline button--primary"
-                onClick={handleFoodItemSubmit}
+                onClick={handleIngredientSubmit}
               >
-                Submit Test Food
+                Submit Ingredient
               </button>
             </div>
           </div>
