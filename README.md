@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [CRA](https://github.com/facebook/create-react-app).
 
+[Link to project's backend/API](https://github.com/MagicCityCode/pantry-api)
+
 ## ROUGH-DRAFT PROJECT PLAN
 
 - Overall good thoughts: https://github.com/elsewhencode/project-guidelines
