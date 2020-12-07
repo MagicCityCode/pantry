@@ -1,11 +1,6 @@
 import * as React from "react";
 // import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-// import Alert from 'react-bootstrap/Alert';
 import { STORAGE_KEY } from "../utils/api-service";
 
 const Login: React.FC = () => {
@@ -49,45 +44,51 @@ const Login: React.FC = () => {
   };
 
   return (
-    <Row className="mt-5 justify-content-center">
-      <Col md={8}>
-        <Form className="border rounded-lg p-3">
-          <Form.Group>
-            <Form.Label>Email</Form.Label>
-            <Form.Control
+    // row mt-5 justify-content-center
+    <div className="">
+      {/* <Col md={8}> */}
+      <div className="">
+        {/* <Form className="border rounded-lg p-3"> */}
+        <form className="">
+          {/* <Form.Group> */}
+          <div className="">
+            {/* <Form.Label>Email</Form.Label> */}
+            <label className="">Email</label>
+            {/* <Form.Control */}
+            <input
               value={values.email || ""}
               onChange={handleChange}
               type="email"
               name="email"
-              size="lg"
-              className="my-2"
+              // size="lg"
+              // className="my-2"
+              className=""
               placeholder="Email address"
               autoComplete="email"
             />
-            <Form.Label>Password</Form.Label>
-            <Form.Control
+            {/* <Form.Label>Password</Form.Label> */}
+            <label className="">Password</label>
+            {/* <Form.Control */}
+            <input
               value={values.password || ""}
               onChange={handleChange}
               type="password"
               name="password"
-              size="lg"
-              className="my-2"
+              // size="lg"
+              // className="my-2"
+              className=""
               placeholder="Password"
               autoComplete="current-password"
             />
-          </Form.Group>
-          <Button
-            onClick={handleLogin}
-            className="w-50 mx-auto"
-            block
-            size="lg"
-          >
+          </div>
+          {/* <Button onClick={handleLogin} className="w-50 mx-auto" block size="lg"> */}
+          <button onClick={handleLogin} className="">
             Login
-          </Button>
-        </Form>
+          </button>
+        </form>
         {/* {err && <Alert variant="danger">{err}</Alert>} */}
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 };
 
