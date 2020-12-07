@@ -30,61 +30,50 @@ const Register: React.FC = () => {
   };
 
   return (
-    // <Row className="mt-5 justify-content-center">
-    <div className="">
-      {/* <Col md={8}> */}
-      <div className="">
-        {/* <Form className="border rounded-lg p-3"> */}
-        <form className="border rounded-lg p-3">
-          {/* <Form.Group> */}
-          <div className="">
-            {/* <Form.Label>Username</Form.Label> */}
-            <label className="">Username</label>
-            {/* <Form.Control */}
-            <input
-              value={values.username || ""}
-              onChange={handleChange}
-              type="username"
-              name="username"
-              // size="lg"
-              // className="my-2"
-              className=""
-              placeholder="Type username here"
-              autoComplete="un"
-            />
-            {/* <Form.Label>Email</Form.Label> */}
-            <label className="">Email</label>
-            {/* <Form.Control */}
-            <input
-              value={values.email || ""}
-              onChange={handleChange}
-              type="email"
-              name="email"
-              // size="lg"
-              // className="my-2"
-              className=""
-              placeholder="example@example.com"
-              autoComplete="email"
-            />
-            {/* <Form.Label>Password</Form.Label> */}
-            <label className="">Password</label>
-            <input
-              value={values.password || ""}
-              onChange={handleChange}
-              type="password"
-              name="password"
-              // size="lg"
-              // className="my-2"
-              className=""
-              placeholder="Type password here"
-              autoComplete="current-password"
-            />
+    <div className="row row--align-center row--justify-center">
+      <div className="card-demo margin-vert--md">
+        <div className="card">
+          <div className="col col--6">
+            <div className="card__body">
+              <label>Username</label>
+              <input
+                value={values.username || ""}
+                onChange={handleChange}
+                type="username"
+                name="username"
+                className="form-input margin-bottom--md"
+                placeholder="Type username here"
+                autoComplete="un"
+              />
+              <label>Email</label>
+              <input
+                value={values.email || ""}
+                onChange={handleChange}
+                type="email"
+                name="email"
+                className="form-input margin-bottom--md"
+                placeholder="example@example.com"
+                autoComplete="email"
+              />
+              <label>Password</label>
+              <input
+                value={values.password || ""}
+                onChange={handleChange}
+                type="password"
+                name="password"
+                className="form-input margin-bottom--md"
+                placeholder="Type password here"
+                autoComplete="current-password"
+              />
+            </div>
+            <button
+              onClick={handleRegister}
+              className="button button--outline button--primary"
+            >
+              Register
+            </button>
           </div>
-          {/* <Button onClick={handleRegister} className="w-50 mx-auto" block size="lg"> */}
-          <button onClick={handleRegister} className="w-50 mx-auto">
-            Register
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   );

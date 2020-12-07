@@ -44,49 +44,41 @@ const Login: React.FC = () => {
   };
 
   return (
-    // row mt-5 justify-content-center
-    <div className="">
-      {/* <Col md={8}> */}
-      <div className="">
-        {/* <Form className="border rounded-lg p-3"> */}
-        <form className="">
-          {/* <Form.Group> */}
-          <div className="">
-            {/* <Form.Label>Email</Form.Label> */}
-            <label className="">Email</label>
-            {/* <Form.Control */}
-            <input
-              value={values.email || ""}
-              onChange={handleChange}
-              type="email"
-              name="email"
-              // size="lg"
-              // className="my-2"
-              className=""
-              placeholder="Email address"
-              autoComplete="email"
-            />
-            {/* <Form.Label>Password</Form.Label> */}
-            <label className="">Password</label>
-            {/* <Form.Control */}
-            <input
-              value={values.password || ""}
-              onChange={handleChange}
-              type="password"
-              name="password"
-              // size="lg"
-              // className="my-2"
-              className=""
-              placeholder="Password"
-              autoComplete="current-password"
-            />
+    <div className="row row--align-center row--justify-center">
+      <div className="card-demo margin-vert--md">
+        <div className="card">
+          <div className="col col--6">
+            <div className="card__body">
+              <label>Email</label>
+              <input
+                value={values.email || ""}
+                onChange={handleChange}
+                type="email"
+                name="email"
+                className="form-input margin-bottom--md"
+                placeholder="Email address"
+                autoComplete="email"
+              />
+              <label>Password</label>
+              <input
+                value={values.password || ""}
+                onChange={handleChange}
+                type="password"
+                name="password"
+                className="form-input margin-bottom--md"
+                placeholder="Password"
+                autoComplete="current-password"
+              />
+            </div>
+            <button
+              onClick={handleLogin}
+              className="button button--outline button--primary"
+            >
+              Login
+            </button>
           </div>
-          {/* <Button onClick={handleLogin} className="w-50 mx-auto" block size="lg"> */}
-          <button onClick={handleLogin} className="">
-            Login
-          </button>
-        </form>
-        {/* {err && <Alert variant="danger">{err}</Alert>} */}
+          {/* {err && <Alert variant="danger">{err}</Alert>} */}
+        </div>
       </div>
     </div>
   );
