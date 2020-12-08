@@ -1,28 +1,25 @@
-import React from "react";
-import { useHistory } from "react-router";
+import React from 'react';
+import { useHistory } from 'react-router';
 
 export default function TestIpts() {
-  const [name, setName] = React.useState<string>("");
-  const [shelfLife, setShelfLife] = React.useState<string>("");
-  const [shelfLifeUnit, setShelfLifeUnit] = React.useState<string>("");
-  const [stg, setStg] = React.useState<string>("");
-  const [uom, setUom] = React.useState<string>("");
+  const [name, setName] = React.useState<string>('');
+  const [shelfLife, setShelfLife] = React.useState<string>('');
+  const [shelfLifeUnit, setShelfLifeUnit] = React.useState<string>('');
+  const [stg, setStg] = React.useState<string>('');
+  const [uom, setUom] = React.useState<string>('');
   const history = useHistory();
 
-  const handleNameIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setName(e.target.value);
+  const handleNameIpt = (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value);
   const handleShelfLifeIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
     setShelfLife(e.target.value);
   const handleShelfLifeUnitIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
     setShelfLifeUnit(e.target.value);
-  const handleStgIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setStg(e.target.value);
-  const handleUomIpt = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setUom(e.target.value);
+  const handleStgIpt = (e: React.ChangeEvent<HTMLInputElement>) => setStg(e.target.value);
+  const handleUomIpt = (e: React.ChangeEvent<HTMLInputElement>) => setUom(e.target.value);
   const handleIngredientSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    let newFormEntry = {
+    const newFormEntry = {
       name,
       shelfLife,
       shelfLifeUnit,
@@ -30,18 +27,18 @@ export default function TestIpts() {
       uom,
     };
 
-    fetch("/ingredients", {
-      method: "POST",
+    fetch('/ingredients', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
       body: JSON.stringify(newFormEntry),
     })
       .then((r) => r.json())
       .then((r) => {
         console.log(r);
-        history.push("/");
+        history.push('/');
       });
   };
 
@@ -87,6 +84,7 @@ export default function TestIpts() {
                 onChange={handleUomIpt}
               />
               <button
+                type="button"
                 className="button button--outline button--primary"
                 onClick={handleIngredientSubmit}
               >
