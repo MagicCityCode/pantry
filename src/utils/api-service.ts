@@ -47,4 +47,4 @@ export default async <T = any>(
   }
 };
 
-// Have this clear local storage & refresh the pg (which Luke said is typically ill-advised in React but...)
+// Have this clear local storage & refresh page for now till better solution
