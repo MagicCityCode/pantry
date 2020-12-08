@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Tesseract, { ImageLike } from "tesseract.js";
+import React, { useState, useEffect } from 'react';
+import Tesseract, { ImageLike } from 'tesseract.js';
 
 /**
  * @todo Add loader/pie chart while worker is parsing image test.
@@ -20,10 +20,10 @@ const ImageReader: React.FC = () => {
 
   useEffect(() => {
     if (image !== null) {
-      Tesseract.recognize(image, "eng", { logger: (m) => console.log(m) }).then(
+      Tesseract.recognize(image, 'eng', { logger: (m) => console.log(m) }).then(
         ({ data: { text } }) => {
           console.log(text);
-        }
+        },
       );
     }
   });
@@ -31,9 +31,8 @@ const ImageReader: React.FC = () => {
   return (
     <div>
       <h1>ImageReader</h1>
-      <label htmlFor="image">Image: </label>
       <input
-        id="image"
+        id="receiptImage"
         name="image"
         onChange={handleImageUpload}
         type="file"
