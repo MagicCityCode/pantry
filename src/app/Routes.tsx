@@ -7,31 +7,29 @@ import PrivateRoute from '../common/PrivateRoute';
 import Register from '../common/Register';
 import Login from '../common/Login';
 
-const Routes: React.FC<RouteProps> = () => {
-  return (
-    <div>
-      <Suspense fallback={<div></div>}>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <PrivateRoute exact path="/testfoodinput">
-            <TestIpts />
-          </PrivateRoute>
-          <PrivateRoute exact path="/imageinput">
-            <ImageReader />
-          </PrivateRoute>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Redirect from="*" to="/" />
-        </Switch>
-      </Suspense>
-    </div>
-  );
-};
+const Routes: React.FC<RouteProps> = () => (
+  <div>
+    <Suspense fallback={<div />}>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <PrivateRoute exact path="/testfoodinput">
+          <TestIpts />
+        </PrivateRoute>
+        <PrivateRoute exact path="/imageinput">
+          <ImageReader />
+        </PrivateRoute>
+        <Route exact path="/register">
+          <Register />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Redirect from="*" to="/" />
+      </Switch>
+    </Suspense>
+  </div>
+);
 
 export default Routes;

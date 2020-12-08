@@ -37,51 +37,59 @@ const Register: React.FC = () => {
         <div className="card">
           <div className="col col--12">
             <div className="card__body">
-              <label>First name</label>
+              <label htmlFor="firstname">
+                First name
+                <br />
+                <input
+                  value={values.first_name || ''}
+                  onChange={handleChange}
+                  type="firstName"
+                  name="first_name"
+                  className="form-input margin-bottom--md"
+                  placeholder="Type first name here"
+                />
+              </label>
               <br />
-              <input
-                value={values.first_name || ''}
-                onChange={handleChange}
-                type="firstName"
-                name="first_name"
-                className="form-input margin-bottom--md"
-                placeholder="Type first name here"
-              />
+              <label htmlFor="lastname">
+                Last name
+                <br />
+                <input
+                  value={values.last_name || ''}
+                  onChange={handleChange}
+                  type="lastName"
+                  name="last_name"
+                  className="form-input margin-bottom--md"
+                  placeholder="Type last name here"
+                />
+              </label>
               <br />
-              <label>Last name</label>
+              <label htmlFor="email">
+                Email
+                <br />
+                <input
+                  value={values.email || ''}
+                  onChange={handleChange}
+                  type="email"
+                  name="email"
+                  className="form-input margin-bottom--md"
+                  placeholder="example@example.com"
+                  autoComplete="email"
+                />
+              </label>
               <br />
-              <input
-                value={values.last_name || ''}
-                onChange={handleChange}
-                type="lastName"
-                name="last_name"
-                className="form-input margin-bottom--md"
-                placeholder="Type last name here"
-              />
-              <br />
-              <label>Email</label>
-              <br />
-              <input
-                value={values.email || ''}
-                onChange={handleChange}
-                type="email"
-                name="email"
-                className="form-input margin-bottom--md"
-                placeholder="example@example.com"
-                autoComplete="email"
-              />
-              <br />
-              <label>Password</label>
-              <br />
-              <input
-                value={values.pw || ''}
-                onChange={handleChange}
-                type="password"
-                name="pw"
-                className="form-input margin-bottom--md"
-                placeholder="Type password here"
-                autoComplete="current-password"
-              />
+              <label htmlFor="password">
+                Password
+                <br />
+                <input
+                  value={values.pw || ''}
+                  onChange={handleChange}
+                  type="password"
+                  name="pw"
+                  className="form-input margin-bottom--md"
+                  placeholder="Type password here"
+                  autoComplete="current-password"
+                />
+              </label>
             </div>
             <div className="row row--no-gutters">
               <div className="col col--12">

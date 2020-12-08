@@ -1,7 +1,7 @@
 import * as React from 'react';
 // import { useLocation } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-import { STORAGE_KEY } from '../utils/api-service';
+import config from '../utils/api-service';
 
 const Login: React.FC = () => {
   const history = useHistory();
@@ -10,7 +10,6 @@ const Login: React.FC = () => {
     // email: 'test@test.com',
     // pw: 'password'
   });
-  /** @todo Bring this back soon */
   // const [err, setErr] = React.useState<string>('');
 
   React.useEffect(() => {
@@ -36,8 +35,7 @@ const Login: React.FC = () => {
     });
     if (res.ok) {
       const info = await res.json();
-      // console.log(info);
-      localStorage.setItem(STORAGE_KEY, info.token);
+      localStorage.setItem(config.STORAGE_KEY, info.token);
       localStorage.setItem('role', info.role);
       history.push('/');
     }
@@ -49,29 +47,33 @@ const Login: React.FC = () => {
         <div className="card">
           <div className="col col--12">
             <div className="card__body">
-              <label>Email</label>
+              <label htmlFor="email">
+                Email
+                <br />
+                <input
+                  value={values.email || ''}
+                  onChange={handleChange}
+                  type="email"
+                  name="email"
+                  className="form-input margin-bottom--md"
+                  placeholder="Email address"
+                  autoComplete="email"
+                />
+              </label>
               <br />
-              <input
-                value={values.email || ''}
-                onChange={handleChange}
-                type="email"
-                name="email"
-                className="form-input margin-bottom--md"
-                placeholder="Email address"
-                autoComplete="email"
-              />
-              <br />
-              <label>Password</label>
-              <br />
-              <input
-                value={values.pw || ''}
-                onChange={handleChange}
-                type="password"
-                name="pw"
-                className="form-input margin-bottom--md"
-                placeholder="Password"
-                autoComplete="current-password"
-              />
+              <label htmlFor="password">
+                Password
+                <br />
+                <input
+                  value={values.pw || ''}
+                  onChange={handleChange}
+                  type="password"
+                  name="pw"
+                  className="form-input margin-bottom--md"
+                  placeholder="Password"
+                  autoComplete="current-password"
+                />
+              </label>
             </div>
             <div className="row row--no-gutters">
               <div className="col col--12">
