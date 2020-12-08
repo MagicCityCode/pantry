@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: npm ci
-      - run: CI=true npm run build
+      - run: CI=false npm run build
 
 workflows:
   build:
