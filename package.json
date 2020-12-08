@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
     "cra-template-typescript": "^1.1.1",
     "dotenv": "^8.2.0",
     "line-column": "^1.0.2",
@@ -33,8 +35,60 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "airbnb",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts?(x)"
+        ],
+        "rules": {
+          "react/prop-types": [
+            "off"
+          ],
+          "prettier/prettier": "error",
+          "no-use-before-define": "off",
+          "@typescript-eslint/no-use-before-define": [
+            "error"
+          ],
+          "react/jsx-filename-extension": [
+            1,
+            {
+              "extensions": [
+                ".tsx"
+              ]
+            }
+          ],
+          "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+              "ts": "never",
+              "tsx": "never"
+            }
+          ]
+        }
+      }
+    ],
+    "settings": {
+      "import/parsers": {
+        "@typescript-eslint/parser": [
+          ".ts",
+          ".tsx"
+        ]
+      },
+      "import/resolver": {
+        "typescript": {
+          "alwaysTryTypes": true
+        }
+      }
+    }
   },
   "browserslist": {
     "production": [
@@ -49,8 +103,6 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.2.2",
     "@types/dotenv": "^8.2.0",
     "@types/jest": "^26.0.15",
     "@types/react": "^17.0.0",
@@ -58,6 +110,10 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.6",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-prettier": "^3.2.0",
     "husky": "^4.3.0",
     "prettier": "^2.2.0",
     "pretty-quick": "^3.1.0"

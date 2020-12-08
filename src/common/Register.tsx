@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 const Register: React.FC = () => {
   const [values, setValues] = React.useState<{ [key: string]: string }>({
@@ -15,10 +15,10 @@ const Register: React.FC = () => {
   };
 
   const handleRegister = async () => {
-    const res = await fetch("/register", {
-      method: "POST",
+    const res = await fetch('/register', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
     });
@@ -35,38 +35,45 @@ const Register: React.FC = () => {
         <div className="card">
           <div className="col col--6">
             <div className="card__body">
-              <label>Username</label>
-              <input
-                value={values.username || ""}
-                onChange={handleChange}
-                type="username"
-                name="username"
-                className="form-input margin-bottom--md"
-                placeholder="Type username here"
-                autoComplete="un"
-              />
-              <label>Email</label>
-              <input
-                value={values.email || ""}
-                onChange={handleChange}
-                type="email"
-                name="email"
-                className="form-input margin-bottom--md"
-                placeholder="example@example.com"
-                autoComplete="email"
-              />
-              <label>Password</label>
-              <input
-                value={values.password || ""}
-                onChange={handleChange}
-                type="password"
-                name="password"
-                className="form-input margin-bottom--md"
-                placeholder="Type password here"
-                autoComplete="current-password"
-              />
+              <label htmlFor="username">
+                Username
+                <input
+                  value={values.username || ''}
+                  onChange={handleChange}
+                  type="username"
+                  name="username"
+                  className="form-input margin-bottom--md"
+                  placeholder="Type username here"
+                  autoComplete="un"
+                />
+              </label>
+              <label htmlFor="email">
+                Email
+                <input
+                  value={values.email || ''}
+                  onChange={handleChange}
+                  type="email"
+                  name="email"
+                  className="form-input margin-bottom--md"
+                  placeholder="example@example.com"
+                  autoComplete="email"
+                />
+              </label>
+              <label htmlFor="password">
+                Password
+                <input
+                  value={values.password || ''}
+                  onChange={handleChange}
+                  type="password"
+                  name="password"
+                  className="form-input margin-bottom--md"
+                  placeholder="Type password here"
+                  autoComplete="current-password"
+                />
+              </label>
             </div>
             <button
+              type="button"
               onClick={handleRegister}
               className="button button--outline button--primary"
             >
