@@ -7,7 +7,7 @@ import PrivateRoute from "../common/PrivateRoute";
 import Register from "../common/Register";
 import Login from "../common/Login";
 
-// Remember to protect new fuctionality with PrivateRoute
+// Remember to protect new functionality with PrivateRoute
 const Routes: React.FC<RouteProps> = () => {
   return (
     <div>

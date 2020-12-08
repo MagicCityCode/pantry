@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-// const unirest = require("unirest");
+import React, { useState, useEffect } from 'react';
+// const unirest = require('unirest');
 
 // const Home: React.FC<Home> = (props) => {
 const Home: React.FC = () => {
@@ -7,12 +7,12 @@ const Home: React.FC = () => {
   // e.preventDefault();
   // };
   useEffect(() => {
-    const requestString = "/joke";
+    const requestString = '/joke';
 
     fetch(requestString, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     })
       .then((r) => r.json())
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
       >
         Generate Food Joke
       </button> */}
-      <h3>Here's a random joke from Spoonacular; are you not entertained?</h3>
+      <h3>Here&apos;s a random joke from Spoonacular; are you not entertained?</h3>
       <h4>{joke}</h4>
     </div>
   );

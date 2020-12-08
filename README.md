@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [CRA](https://github.com/facebook/create-react-app).
 
+[Link to project's backend/API](https://github.com/MagicCityCode/pantry-api)
+
 ## ROUGH-DRAFT PROJECT PLAN
 
 - Overall good thoughts: https://github.com/elsewhencode/project-guidelines
@@ -12,7 +14,7 @@ This project was bootstrapped with [CRA](https://github.com/facebook/create-reac
   - https://www.codeinwp.com/blog/react-best-practices/
   - https://web.dev/react/
   - https://www.robinwieruch.de/react-libraries
-  - https://github.com/airbnb/javascript/tree/master/react
+  - https://github.com/airbnb/javascript/tree/master/react - Adding Airbnb style guide to project
 - [Infima](https://facebookincubator.github.io/infima/)/Bootstrap - interface/CSS styling
 - TypeScript/JS - https://react-typescript-cheatsheet.netlify.app/
 - Python - for data / image-processing
