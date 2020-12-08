@@ -8,8 +8,9 @@ const Login: React.FC = () => {
   // const { state } = useLocation<{ msg: string }>();
   const [values, setValues] = React.useState<{ [key: string]: string }>({
     // email: 'test@test.com',
-    // password: 'password'
+    // pw: 'password'
   });
+  /** @todo Bring this back soon */
   // const [err, setErr] = React.useState<string>('');
 
   React.useEffect(() => {
@@ -40,16 +41,16 @@ const Login: React.FC = () => {
       localStorage.setItem("role", info.role);
       history.push("/");
     }
-    // console.log('Register', values);
   };
 
   return (
     <div className="row row--align-center row--justify-center">
       <div className="card-demo margin-vert--md">
         <div className="card">
-          <div className="col col--6">
+          <div className="col col--12">
             <div className="card__body">
               <label>Email</label>
+              <br />
               <input
                 value={values.email || ""}
                 onChange={handleChange}
@@ -59,23 +60,30 @@ const Login: React.FC = () => {
                 placeholder="Email address"
                 autoComplete="email"
               />
+              <br />
               <label>Password</label>
+              <br />
               <input
-                value={values.password || ""}
+                value={values.pw || ""}
                 onChange={handleChange}
                 type="password"
-                name="password"
+                name="pw"
                 className="form-input margin-bottom--md"
                 placeholder="Password"
                 autoComplete="current-password"
               />
             </div>
-            <button
-              onClick={handleLogin}
-              className="button button--outline button--primary"
-            >
-              Login
-            </button>
+            <div className="row row--no-gutters">
+              <div className="col col--12">
+                <button
+                  type="submit"
+                  onClick={handleLogin}
+                  className="button button--block button--primary margin margin-vert--md"
+                >
+                  Log in
+                </button>
+              </div>
+            </div>
           </div>
           {/* {err && <Alert variant="danger">{err}</Alert>} */}
         </div>
@@ -83,7 +91,5 @@ const Login: React.FC = () => {
     </div>
   );
 };
-
-// interface LoginProps {}
 
 export default Login;
