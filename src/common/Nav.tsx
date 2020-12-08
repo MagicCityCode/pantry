@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+/** @todo Get navbar content to wrap when screen width narrows */
+
 const Nav: React.FC = () => {
   return (
     <nav className="navbar navbar--dark">
@@ -9,12 +11,12 @@ const Nav: React.FC = () => {
           <NavLink className="navbar__item navbar__link" exact to="/">
             Home
           </NavLink>
-          {/* <NavLink className="navbar__item navbar__link" exact to="/register">
-          Register
-          </NavLink> */}
-          {/* <NavLink className="navbar__item navbar__link" exact to="/login">
-          Login
-          </NavLink> */}
+          <NavLink className="navbar__item navbar__link" exact to="/register">
+            Register
+          </NavLink>
+          <NavLink className="navbar__item navbar__link" exact to="/login">
+            Login
+          </NavLink>
           <NavLink
             className="navbar__item navbar__link"
             exact
@@ -22,7 +24,7 @@ const Nav: React.FC = () => {
           >
             Test Food Input
           </NavLink>
-          <NavLink className="navbar__item navbar__link" exact to="/imageInput">
+          <NavLink className="navbar__item navbar__link" exact to="/imageinput">
             Image Input
           </NavLink>
         </div>
