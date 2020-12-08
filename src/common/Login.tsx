@@ -1,14 +1,14 @@
 import * as React from 'react';
 // import { useLocation } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-import STORAGE_KEY from '../utils/api-service';
+import config from '../utils/api-service';
 
 const Login: React.FC = () => {
   const history = useHistory();
   // const { state } = useLocation<{ msg: string }>();
   const [values, setValues] = React.useState<{ [key: string]: string }>({
     // email: 'test@test.com',
-    // password: 'password'
+    // pw: 'password'
   });
   // const [err, setErr] = React.useState<string>('');
 
@@ -35,22 +35,21 @@ const Login: React.FC = () => {
     });
     if (res.ok) {
       const info = await res.json();
-      // console.log(info);
-      localStorage.setItem(STORAGE_KEY, info.token);
+      localStorage.setItem(config.STORAGE_KEY, info.token);
       localStorage.setItem('role', info.role);
       history.push('/');
     }
-    // console.log('Register', values);
   };
 
   return (
     <div className="row row--align-center row--justify-center">
       <div className="card-demo margin-vert--md">
         <div className="card">
-          <div className="col col--6">
+          <div className="col col--12">
             <div className="card__body">
               <label htmlFor="email">
                 Email
+                <br />
                 <input
                   value={values.email || ''}
                   onChange={handleChange}
@@ -61,26 +60,32 @@ const Login: React.FC = () => {
                   autoComplete="email"
                 />
               </label>
+              <br />
               <label htmlFor="password">
                 Password
+                <br />
                 <input
-                  value={values.password || ''}
+                  value={values.pw || ''}
                   onChange={handleChange}
                   type="password"
-                  name="password"
+                  name="pw"
                   className="form-input margin-bottom--md"
                   placeholder="Password"
                   autoComplete="current-password"
                 />
               </label>
             </div>
-            <button
-              type="button"
-              onClick={handleLogin}
-              className="button button--outline button--primary"
-            >
-              Login
-            </button>
+            <div className="row row--no-gutters">
+              <div className="col col--12">
+                <button
+                  type="submit"
+                  onClick={handleLogin}
+                  className="button button--block button--primary margin margin-vert--md"
+                >
+                  Log in
+                </button>
+              </div>
+            </div>
           </div>
           {/* {err && <Alert variant="danger">{err}</Alert>} */}
         </div>
@@ -88,7 +93,5 @@ const Login: React.FC = () => {
     </div>
   );
 };
-
-// interface LoginProps {}
 
 export default Login;

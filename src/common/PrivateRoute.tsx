@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import STORAGE_KEY from '../utils/api-service';
+import config from '../utils/api-service';
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ exact, path, children }) => {
-  const TOKEN = localStorage.getItem(STORAGE_KEY);
+  const TOKEN = localStorage.getItem(config.STORAGE_KEY);
   if (TOKEN) {
     return (
       <Route exact={exact} path={path}>

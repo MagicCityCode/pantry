@@ -25,7 +25,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1>Home View Working</h1>
+      <h1 className="margin-top--md">Home View Working</h1>
       <br />
       {/* <button
         className="button button--outline button--primary"

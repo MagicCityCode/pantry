@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Register: React.FC = () => {
+  const history = useHistory();
   const [values, setValues] = React.useState<{ [key: string]: string }>({
     // email: 'test@test.com',
-    // password: 'password'
+    // pw: 'password'
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,32 +25,47 @@ const Register: React.FC = () => {
       body: JSON.stringify(values),
     });
     if (res.ok) {
-      const info = await res.json();
-      console.log(info);
+      // const info = await res.json();
+      // console.log(info);
+      history.push('/');
     }
-    // console.log('Register', values);
   };
 
   return (
     <div className="row row--align-center row--justify-center">
       <div className="card-demo margin-vert--md">
         <div className="card">
-          <div className="col col--6">
+          <div className="col col--12">
             <div className="card__body">
-              <label htmlFor="username">
-                Username
+              <label htmlFor="firstname">
+                First name
+                <br />
                 <input
-                  value={values.username || ''}
+                  value={values.first_name || ''}
                   onChange={handleChange}
-                  type="username"
-                  name="username"
+                  type="firstName"
+                  name="first_name"
                   className="form-input margin-bottom--md"
-                  placeholder="Type username here"
-                  autoComplete="un"
+                  placeholder="Type first name here"
                 />
               </label>
+              <br />
+              <label htmlFor="lastname">
+                Last name
+                <br />
+                <input
+                  value={values.last_name || ''}
+                  onChange={handleChange}
+                  type="lastName"
+                  name="last_name"
+                  className="form-input margin-bottom--md"
+                  placeholder="Type last name here"
+                />
+              </label>
+              <br />
               <label htmlFor="email">
                 Email
+                <br />
                 <input
                   value={values.email || ''}
                   onChange={handleChange}
@@ -59,26 +76,32 @@ const Register: React.FC = () => {
                   autoComplete="email"
                 />
               </label>
+              <br />
               <label htmlFor="password">
                 Password
+                <br />
                 <input
-                  value={values.password || ''}
+                  value={values.pw || ''}
                   onChange={handleChange}
                   type="password"
-                  name="password"
+                  name="pw"
                   className="form-input margin-bottom--md"
                   placeholder="Type password here"
                   autoComplete="current-password"
                 />
               </label>
             </div>
-            <button
-              type="button"
-              onClick={handleRegister}
-              className="button button--outline button--primary"
-            >
-              Register
-            </button>
+            <div className="row row--no-gutters">
+              <div className="col col--12">
+                <button
+                  type="submit"
+                  onClick={handleRegister}
+                  className="button button--block button--primary margin margin-vert--md"
+                >
+                  Sign up
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

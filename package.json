@@ -29,7 +29,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npx pretty-quick --staged"
+      "pre-commit": "npx pretty-quick --staged && npx eslint src --quiet"
     }
   },
   "eslintConfig": {
