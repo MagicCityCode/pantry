@@ -1,11 +1,11 @@
-import React, { Suspense } from "react";
-import { Switch, Route, RouteProps, Redirect } from "react-router-dom";
-import Home from "../common/Home";
-import TestIpts from "../feats/TestIpts";
-import ImageReader from "../feats/ImageReader";
-import PrivateRoute from "../common/PrivateRoute";
-import Register from "../common/Register";
-import Login from "../common/Login";
+import React, { Suspense } from 'react';
+import { Switch, Route, RouteProps, Redirect } from 'react-router-dom';
+import Home from '../common/Home';
+import TestIpts from '../feats/TestIpts';
+import ImageReader from '../feats/ImageReader';
+import PrivateRoute from '../common/PrivateRoute';
+import Register from '../common/Register';
+import Login from '../common/Login';
 
 const Routes: React.FC<RouteProps> = () => {
   return (

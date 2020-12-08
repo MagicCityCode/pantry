@@ -1,7 +1,7 @@
-import * as React from "react";
-// import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import { STORAGE_KEY } from "../utils/api-service";
+import * as React from 'react';
+// import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { STORAGE_KEY } from '../utils/api-service';
 
 const Login: React.FC = () => {
   const history = useHistory();
@@ -27,10 +27,10 @@ const Login: React.FC = () => {
   };
 
   const handleLogin = async () => {
-    const res = await fetch("/login", {
-      method: "POST",
+    const res = await fetch('/login', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
     });
@@ -38,8 +38,8 @@ const Login: React.FC = () => {
       const info = await res.json();
       // console.log(info);
       localStorage.setItem(STORAGE_KEY, info.token);
-      localStorage.setItem("role", info.role);
-      history.push("/");
+      localStorage.setItem('role', info.role);
+      history.push('/');
     }
   };
 
@@ -52,7 +52,7 @@ const Login: React.FC = () => {
               <label>Email</label>
               <br />
               <input
-                value={values.email || ""}
+                value={values.email || ''}
                 onChange={handleChange}
                 type="email"
                 name="email"
@@ -64,7 +64,7 @@ const Login: React.FC = () => {
               <label>Password</label>
               <br />
               <input
-                value={values.pw || ""}
+                value={values.pw || ''}
                 onChange={handleChange}
                 type="password"
                 name="pw"

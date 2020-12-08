@@ -1,5 +1,5 @@
-import * as React from "react";
-import { useHistory } from "react-router-dom";
+import * as React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Register: React.FC = () => {
   const history = useHistory();
@@ -17,17 +17,17 @@ const Register: React.FC = () => {
   };
 
   const handleRegister = async () => {
-    const res = await fetch("/register", {
-      method: "POST",
+    const res = await fetch('/register', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
     });
     if (res.ok) {
       // const info = await res.json();
       // console.log(info);
-      history.push("/");
+      history.push('/');
     }
   };
 
@@ -40,7 +40,7 @@ const Register: React.FC = () => {
               <label>First name</label>
               <br />
               <input
-                value={values.first_name || ""}
+                value={values.first_name || ''}
                 onChange={handleChange}
                 type="firstName"
                 name="first_name"
@@ -51,7 +51,7 @@ const Register: React.FC = () => {
               <label>Last name</label>
               <br />
               <input
-                value={values.last_name || ""}
+                value={values.last_name || ''}
                 onChange={handleChange}
                 type="lastName"
                 name="last_name"
@@ -62,7 +62,7 @@ const Register: React.FC = () => {
               <label>Email</label>
               <br />
               <input
-                value={values.email || ""}
+                value={values.email || ''}
                 onChange={handleChange}
                 type="email"
                 name="email"
@@ -74,7 +74,7 @@ const Register: React.FC = () => {
               <label>Password</label>
               <br />
               <input
-                value={values.pw || ""}
+                value={values.pw || ''}
                 onChange={handleChange}
                 type="password"
                 name="pw"
