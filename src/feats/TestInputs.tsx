@@ -36,7 +36,6 @@ export default function TestInputs() {
       [e.target.name]: e.target.value,
     }));
   };
-  console.log(newRecipeSearchByIngredientsFormEntry);
   const handleRecipeSearchByIngredientsFormSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     fetch('/recipes-by-ingredients', {
