@@ -4,3 +4,8 @@
   bottom: 0;
   right: 0;
 }
+
+.card--title {
+  font-weight: bold;
+  margin-top: 5px;
+}
