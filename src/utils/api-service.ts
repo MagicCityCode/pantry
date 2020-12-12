@@ -1,7 +1,7 @@
 const handleFetch = (
   resourcePath: string,
   httpMethod: string,
-  content: { [key: string]: unknown },
+  content?: { [key: string]: unknown },
 ) => {
   fetch(String(resourcePath), {
     method: String(httpMethod),
