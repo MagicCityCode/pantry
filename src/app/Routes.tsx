@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Switch, Route, RouteProps, Redirect } from 'react-router-dom';
 import Home from '../common/Home';
-import TestInputs from '../feats/TestInputs';
+import TestInputs from '../feats/IngredientInput';
 import ImageReader from '../feats/ImageReader';
 import PrivateRoute from '../common/PrivateRoute';
 import Register from '../common/Register';
@@ -14,7 +14,10 @@ const Routes: React.FC<RouteProps> = () => (
         <Route exact path="/">
           <Home />
         </Route>
-        <PrivateRoute exact path="/test-inputs">
+        <PrivateRoute exact path="/ingredient-input">
+          <TestInputs />
+        </PrivateRoute>
+        <PrivateRoute exact path="/search-recipes">
           <TestInputs />
         </PrivateRoute>
         <PrivateRoute exact path="/image-input">

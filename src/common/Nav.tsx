@@ -46,8 +46,11 @@ const Nav: React.FC = () => (
         <NavLink className="navbar__item navbar__link" exact to="/login">
           Login
         </NavLink>
-        <NavLink className="navbar__item navbar__link" exact to="/test-inputs">
-          Test Inputs
+        <NavLink className="navbar__item navbar__link" exact to="/ingredient-input">
+          Ingredient Input
+        </NavLink>
+        <NavLink className="navbar__item navbar__link" exact to="/search-recipes">
+          Recipe Search
         </NavLink>
         <NavLink className="navbar__item navbar__link" exact to="/image-input">
           Image Input
