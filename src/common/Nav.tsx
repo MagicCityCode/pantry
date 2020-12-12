@@ -46,10 +46,10 @@ const Nav: React.FC = () => (
         <NavLink className="navbar__item navbar__link" exact to="/login">
           Login
         </NavLink>
-        <NavLink className="navbar__item navbar__link" exact to="/testfoodinput">
-          Test Food Input
+        <NavLink className="navbar__item navbar__link" exact to="/test-inputs">
+          Test Inputs
         </NavLink>
-        <NavLink className="navbar__item navbar__link" exact to="/imageInput">
+        <NavLink className="navbar__item navbar__link" exact to="/image-input">
           Image Input
         </NavLink>
         {/* Placeholder; make logout functional */}
