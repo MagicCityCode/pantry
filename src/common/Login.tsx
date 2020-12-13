@@ -26,19 +26,20 @@ const Login: React.FC = () => {
   };
 
   const handleLogin = async () => {
-    const res = await fetch('/login', {
+    await fetch('/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
-    });
-    if (res.ok) {
-      const info = await res.json();
-      localStorage.setItem(config.STORAGE_KEY, info.token);
-      localStorage.setItem('role', info.role);
-      history.push('/');
-    }
+    })
+      .then(async (res) => {
+        const info = await res.json();
+        localStorage.setItem(config.STORAGE_KEY, info.token);
+        localStorage.setItem('role', info.role);
+      })
+      .catch((err) => console.log(err, err.message))
+      .finally(() => history.push('/'));
   };
 
   return (

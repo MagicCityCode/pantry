@@ -3,12 +3,8 @@ import React, { useState, useEffect } from 'react';
 
 // const Home: React.FC<Home> = (props) => {
 const Home: React.FC = () => {
-  // const handleJokeButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-  // e.preventDefault();
-  // };
   useEffect(() => {
     const requestString = '/joke';
-
     fetch(requestString, {
       method: 'GET',
       headers: {
@@ -17,9 +13,9 @@ const Home: React.FC = () => {
     })
       .then((r) => r.json())
       .then((r) => {
-        console.log(r);
         setJoke(r.text);
-      });
+      })
+      .catch((err) => console.log(err, err.message));
   }, []);
   const [joke, setJoke] = useState([]);
 
@@ -27,12 +23,6 @@ const Home: React.FC = () => {
     <div>
       <h1 className="margin-top--md">Home View Working</h1>
       <br />
-      {/* <button
-        className="button button--outline button--primary"
-        onClick={handleJokeButtonClick}
-      >
-        Generate Food Joke
-      </button> */}
       <h3>Here&apos;s a random joke from Spoonacular; are you not entertained?</h3>
       <h4>{joke}</h4>
     </div>

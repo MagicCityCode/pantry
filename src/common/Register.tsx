@@ -17,18 +17,15 @@ const Register: React.FC = () => {
   };
 
   const handleRegister = async () => {
-    const res = await fetch('/register', {
+    await fetch('/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
-    });
-    if (res.ok) {
-      // const info = await res.json();
-      // console.log(info);
-      history.push('/');
-    }
+    })
+      .catch((err) => console.log(err, err.message))
+      .finally(() => history.push('/'));
   };
 
   return (
