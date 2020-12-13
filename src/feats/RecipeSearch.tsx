@@ -1,7 +1,7 @@
 import React from 'react';
 import service from '../utils/api-service';
 
-export default function RecipeSearch() {
+const RecipeSearch: React.FC = () => {
   const [newFormEntry, setNewFormEntry] = React.useState<{ [key: string]: string }>({});
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.persist();
@@ -43,4 +43,6 @@ export default function RecipeSearch() {
       </div>
     </div>
   );
-}
+};
+
+export default RecipeSearch;

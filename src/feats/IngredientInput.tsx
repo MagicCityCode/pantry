@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import service from '../utils/api-service';
 
-export default function TestInputs() {
+const TestInputs: React.FC = () => {
   const history = useHistory();
   const [newFormEntry, setNewFormEntry] = React.useState<{ [key: string]: string }>({});
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -78,4 +78,6 @@ export default function TestInputs() {
       </div>
     </div>
   );
-}
+};
+
+export default TestInputs;
