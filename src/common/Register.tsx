@@ -24,7 +24,7 @@ const Register: React.FC = () => {
       },
       body: JSON.stringify(values),
     })
-      .catch((err) => console.log(err, err.message))
+      .catch((err) => console.log({ Error: err, Status: err.status, Message: err.message }))
       .finally(() => history.push('/'));
   };
 
