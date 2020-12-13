@@ -10,8 +10,8 @@ function handleFetch(
     },
     body: JSON.stringify(content),
   })
-    .then((r) => r.json())
-    .catch((err) => console.log(err, err.status, err.message));
+    .then((results) => results.json())
+    .catch((err) => console.log({ Error: err, Status: err.status, Message: err.message }));
 }
 
 export default {

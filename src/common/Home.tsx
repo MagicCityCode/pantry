@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       .then((r) => {
         setJoke(r.text);
       })
-      .catch((err) => console.log(err, err.message));
+      .catch((err) => console.log({ Error: err, Status: err.status, Message: err.message }));
   }, []);
   const [joke, setJoke] = useState([]);
 

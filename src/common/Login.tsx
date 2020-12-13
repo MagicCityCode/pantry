@@ -38,7 +38,7 @@ const Login: React.FC = () => {
         localStorage.setItem(config.STORAGE_KEY, info.token);
         localStorage.setItem('role', info.role);
       })
-      .catch((err) => console.log(err, err.message))
+      .catch((err) => console.log({ Error: err, Status: err.status, Message: err.message }))
       .finally(() => history.push('/'));
   };
 
