@@ -1,6 +1,11 @@
 # PantryBoss Frontend
 
 This project was bootstrapped with [CRA](https://github.com/facebook/create-react-app).
+<a href="https://reactjs.org" title="React"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" width="70" alt="React" /></a>
+<a href="https://webpack.js.org" title="Webpack"><img src="https://day-journal.com/memo/images/logo/webpack.png" width="50" alt="Webpack" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://eslint.org" title="ESLint"><img src="https://avatars1.githubusercontent.com/u/6019716?s=400&v=4" width="45" alt="ESLint" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<!-- <a href="https://facebook.github.io/jest" title="Jest"><img src="https://cloudinary-a.akamaihd.net/bountysource/image/upload/d_noaoqqwxegvmulwus0un.png,c_pad,w_200,h_200,b_white/ivp5rb3l5uo7vlcam5kc.png" width="40" alt="Jest" /></a> -->
 
 [Link to project's backend/API](https://github.com/MagicCityCode/pantry-api)
 
