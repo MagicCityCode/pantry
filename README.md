@@ -12,7 +12,7 @@ This project was bootstrapped with [CRA](https://github.com/facebook/create-reac
 
 ## ROUGH-DRAFT PROJECT PLAN
 
-- Overall good thoughts: https://github.com/elsewhencode/project-guidelines
+Overall good thoughts: https://github.com/elsewhencode/project-guidelines
 
 ### STACK
 
