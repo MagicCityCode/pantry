@@ -1,8 +1,8 @@
 function handleFetch(
   resourcePath: string,
   httpMethod: string,
-  content?: { [key: string]: unknown },
-): unknown {
+  content?: { [key: string]: any },
+): any {
   return fetch(String(resourcePath), {
     method: String(httpMethod),
     headers: {
