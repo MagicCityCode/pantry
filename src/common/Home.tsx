@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from 'react';
-// const unirest = require('unirest');
+import service from '../utils/api-service';
 
-// const Home: React.FC<Home> = (props) => {
 const Home: React.FC = () => {
   useEffect(() => {
-    const requestString = '/joke';
-    fetch(requestString, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((r) => r.json())
-      .then((r) => {
+    service
+      .handleFetch('/joke', 'GET')
+      .then((r: any) => r.json())
+      .then((r: any) => {
         setJoke(r.text);
       })
-      .catch((err) => console.log({ Error: err, Status: err.status, Message: err.message }));
+      .catch((err: any) => console.log({ Error: err, Status: err.status, Message: err.message }));
   }, []);
   const [joke, setJoke] = useState([]);
 
@@ -28,7 +22,5 @@ const Home: React.FC = () => {
     </div>
   );
 };
-
-// interface Home {}
 
 export default Home;
