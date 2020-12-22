@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-import service from '../utils/api-service';
+// import service from '../utils/api-service';
 
 const TestInputs: React.FC = () => {
   const history = useHistory();
@@ -14,7 +14,18 @@ const TestInputs: React.FC = () => {
   };
   const handleFormSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    service.handleFetch('/ingredients', 'POST', newFormEntry);
+    fetch('/ingredients', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newFormEntry),
+    })
+      .then((r: any) => r.json())
+      .then((r: any) => {
+        console.log(r);
+      })
+      .catch((err: any) => console.log({ Error: err, Status: err.status, Message: err.message }));
     history.push('/');
   };
 

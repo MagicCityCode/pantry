@@ -6,6 +6,7 @@ import ImageReader from '../feats/ImageReader';
 import PrivateRoute from '../common/PrivateRoute';
 import Register from '../common/Register';
 import Login from '../common/Login';
+import RecipeSearch from '../feats/RecipeSearch';
 
 const Routes: React.FC<RouteProps> = () => (
   <div>
@@ -18,7 +19,7 @@ const Routes: React.FC<RouteProps> = () => (
           <TestInputs />
         </PrivateRoute>
         <PrivateRoute exact path="/search-recipes">
-          <TestInputs />
+          <RecipeSearch />
         </PrivateRoute>
         <PrivateRoute exact path="/image-input">
           <ImageReader />

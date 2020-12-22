@@ -25,15 +25,20 @@ const Login: React.FC = () => {
     }));
   };
 
-  const handleLogin = () => {
-    config
-      .handleFetch('/register', 'POST')
-      .then(async (res: any) => {
+  const handleLogin = async () => {
+    await fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    })
+      .then(async (res) => {
         const info = await res.json();
         localStorage.setItem(config.STORAGE_KEY, info.token);
-        // localStorage.setItem('role', info.role);
+        localStorage.setItem('role', info.role);
       })
-      .catch((err: any) => console.log({ Error: err, Status: err.status, Message: err.message }))
+      .catch((err) => console.log({ Error: err, Status: err.status, Message: err.message }))
       .finally(() => history.push('/'));
   };
 
