@@ -3,13 +3,17 @@ import service from '../utils/api-service';
 
 const Home: React.FC = () => {
   useEffect(() => {
-    service
-      .handleFetch('/joke', 'GET')
-      .then((r: any) => r.json())
-      .then((r: any) => {
+    fetch('/joke', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((r) => r.json())
+      .then((r) => {
         setJoke(r.text);
       })
-      .catch((err: any) => console.log({ Error: err, Status: err.status, Message: err.message }));
+      .catch((err) => console.log({ Error: err, Status: err.status, Message: err.message }));
   }, []);
   const [joke, setJoke] = useState([]);
 

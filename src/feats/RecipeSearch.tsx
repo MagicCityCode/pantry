@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import service from '../utils/api-service';
-// import { ISpoonacularRecipe } from '../utils/types';
+import React, { useState, useEffect } from 'react';
+// import service from '../utils/api-service';
+import { ISpoonacularRecipe } from '../utils/types';
 
 const RecipeSearch: React.FC = () => {
   const [newFormEntry, setNewFormEntry] = useState<{ [key: string]: string }>({});
@@ -12,40 +12,72 @@ const RecipeSearch: React.FC = () => {
     }));
   };
 
-  // const handleFormSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
-  //   e.preventDefault();
-  //   service.handleFetch('/recipes-by-ingredients', 'POST', newFormEntry);
-  // };
-
-  // const [recipeSearchResults, setRecipeSearchResults] = useState<ISpoonacularRecipe[]>([]);
+  const [recipeSearchResults, setRecipeSearchResults] = useState<ISpoonacularRecipe[]>([]);
 
   const handleFormSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    service.handleFetch('/recipes-by-ingredients', 'POST', newFormEntry);
+    fetch('/recipes-by-ingredients', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newFormEntry),
+    })
+      .then((r: any) => r.json())
+      .then((r: any) => {
+        setRecipeSearchResults(r);
+      })
+      .catch((err: any) => console.log({ Error: err, Status: err.status, Message: err.message }));
   };
 
-  // Need to somehow get the recipe search submit response results into my useEffect to set state here to recipeSearchResults
-  // useEffect(() => {
-  //   (async () => {
-  //     const resRecipes: any = await service.handleFetch('/api/reviews', 'GET');
-  //     setRecipeSearchResults(resRecipes);
-  //   })();
-  // }, []);
+  const [userAvailableInventory, setUserAvailableInventory] = useState<any[]>([]);
+  const userId = 1; // Replace this w/ authenticated user's ID
+  useEffect(() => {
+    fetch(`/available-inventory/${userId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((r) => r.json())
+      .then((r) => {
+        setUserAvailableInventory(r);
+      })
+      .catch((err) => console.log({ Error: err, Status: err.status, Message: err.message }));
+  }, []);
+  let ingredientsFromInventoryString = '';
+  // Soon add duplicate-omission to for loop below
+  const prepIngredientsListForSpoonacular = (arr: any) => {
+    if (userAvailableInventory.length >= 1) {
+      for (let i = 0; i < userAvailableInventory.length; i + 1) {
+        if (userAvailableInventory.length === 1) {
+          ingredientsFromInventoryString = arr[i].item;
+        } else if (i === userAvailableInventory.length - 1) {
+          ingredientsFromInventoryString.concat(String(`${arr[i].item}`));
+        }
+        ingredientsFromInventoryString.concat(String(`${arr[i].item}, `));
+      }
+      return ingredientsFromInventoryString;
+    }
+    return 'durian';
+  };
 
-  // const userId =
-  // const [userAvailableInventory, setUserAvailableInventory] = useState<
-  //   IUserInventory[]
-  // >([]);
-  // useEffect(() => {
-  //   (async () => {
-  //     const resUserAvailableInventory = await service.handleFetch(`/api/available-inventory/${userId}`, 'GET');
-  //     setUserAvailableInventory(resUserAvailableInventory);
-  //   })();
-  // }, []);
-  // const handleFormSubmitByInventory = (e: React.MouseEvent<HTMLButtonElement>) => {
-  //   e.preventDefault();
-  //   service.handleFetch('/recipes-by-ingredients', 'POST', userAvailableInventory);
-  // };
+  const handleFormSubmitByInventory = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const ingredients: string = prepIngredientsListForSpoonacular(userAvailableInventory);
+    fetch('/recipes-by-ingredients', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ listOfIngredients: ingredients }),
+    })
+      .then((r: any) => r.json())
+      .then((r: any) => {
+        setRecipeSearchResults(r);
+      })
+      .catch((err: any) => console.log({ Error: err, Status: err.status, Message: err.message }));
+  };
 
   return (
     <>
@@ -70,23 +102,23 @@ const RecipeSearch: React.FC = () => {
                 >
                   Submit Search
                 </button>
-                {/* <button
-                type="button"
-                className="button button--outline button--primary"
-                onClick={handleFormSubmitByInventory}
+                <button
+                  type="button"
+                  className="button button--outline button--primary"
+                  onClick={handleFormSubmitByInventory}
                 >
-                Submit Inventory Search
-              </button> */}
+                  Submit Inventory Search
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <div className="row row--align-center row--justify-center">
-        <div>
-          <RecipeCards /> Pass props into this
-        </div>
-      </div> */}
+      <div className="row row--align-center row--justify-center">
+        {recipeSearchResults.map((result) => (
+          <span key={`test-recipe-key-${result.id}`}>{result.title}</span>
+        ))}
+      </div>
     </>
   );
 };
