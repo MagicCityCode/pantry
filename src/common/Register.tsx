@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
+import service from '../utils/api-service';
 
 const Register: React.FC = () => {
   const history = useHistory();
@@ -16,15 +17,10 @@ const Register: React.FC = () => {
     }));
   };
 
-  const handleRegister = async () => {
-    await fetch('/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(values),
-    })
-      .catch((err) => console.log({ Error: err, Status: err.status, Message: err.message }))
+  const handleRegister = () => {
+    service
+      .handleFetch('/register', 'POST')
+      .catch((err: any) => console.log({ Error: err, Status: err.status, Message: err.message }))
       .finally(() => history.push('/'));
   };
 
