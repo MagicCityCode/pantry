@@ -52,6 +52,9 @@ const Nav: React.FC = () => (
         <NavLink className="navbar__item navbar__link" exact to="/search-recipes">
           Recipe Search
         </NavLink>
+        <NavLink className="navbar__item navbar__link" exact to="/user-inventory">
+          Available Inventory
+        </NavLink>
         <NavLink className="navbar__item navbar__link" exact to="/image-input">
           Image Input
         </NavLink>
