@@ -22,26 +22,6 @@ const UserInventoryAndRecipeSearch: React.FC = () => {
   }, []);
 
   const prepIngredientsListForSpoonacular = (arr: any) => {
-    // function prepIngredientsListForSpoonacular(arr) {
-    //   let ingredientsFromInventoryString = '';
-    //   if (arr.length === 1) {
-    //     ingredientsFromInventoryString = arr[0];
-    //   } else if (arr.length === 2) {
-    //     ingredientsFromInventoryString = arr[0] + ', ' + arr[1];
-    //   } else {
-    //     for (let i = 0; i < arr.length; i++) {
-    //       if (i === arr.length - 1) {
-    //         ingredientsFromInventoryString = ingredientsFromInventoryString + arr[i];
-    //       } else if (i === 0) {
-    //         ingredientsFromInventoryString = arr[i];
-    //       } else {
-    //         ingredientsFromInventoryString = ingredientsFromInventoryString + arr[i] + ', ';
-    //       }
-    //     }
-    //   }
-    //   return ingredientsFromInventoryString;
-    // }
-    // prepIngredientsListForSpoonacular(foodArr);
     const ingredientsArr = arr.map((food: { item: any }) => food.item);
     const ingredientsString = ingredientsArr.join(', ');
     return ingredientsString;
@@ -58,9 +38,7 @@ const UserInventoryAndRecipeSearch: React.FC = () => {
       body: JSON.stringify({ listOfIngredients: ingredients }),
     })
       .then((r: any) => r.json())
-      .then((r: any) => {
-        setRecipeSearchResults(r);
-      })
+      .then((r: any) => setRecipeSearchResults(r))
       .catch((err: any) => console.log({ Error: err, Status: err.status, Message: err.message }));
   };
 
@@ -72,23 +50,51 @@ const UserInventoryAndRecipeSearch: React.FC = () => {
             <div className="col col--12">
               <h3 className="card--title">Search Recipes by Ingredients</h3>
               <div className="card__body">
+                {/* Replace this button and its event handler with multiple useEffects that automatically load user's available inventory and potential recipes upon initial render */}
                 <button
                   type="button"
                   className="button button--outline button--primary"
                   onClick={(e) => handleSubmitByInventory(e)}
                 >
-                  Submit Inventory Search
+                  Search Recipes Using Inventory
                 </button>
               </div>
-              <div>DISPLAY CURRENT AVAILABLE INVENTORY OF USER HERE</div>
             </div>
           </div>
+          <br />
+          <div className="card--title">
+            PLACEHOLDER: DISPLAY CURRENT AVAILABLE INVENTORY OF USER HERE
+          </div>
+          {/* <ol>
+            {userAvailableInventory.map((item) => (
+              <>
+                <br />
+                For some reason, below key is being rejected as not unique and below JSX items are being rendered as undefined; revisit
+                <li
+                  key={`inventory-result-key-${item.Input_ID}-${item.Ingredient_ID}-${item.Unit_of_Measure}-${item.Quantity}`}
+                >
+                  {`${item.Item}, Quantity: ${item.Quantity}, Unit of measure: ${item.Unit_of_Measure}, Days till expiration: ${item.Days_Until_Expiration}`}
+                </li>
+              </>
+            ))}
+          </ol> */}
         </div>
       </div>
       <div className="row row--align-center row--justify-center">
-        {recipeSearchResults.map((result) => (
-          <span key={`test-recipe-key-${result.id}`}>{result.title}</span>
-        ))}
+        <div className="card--title">
+          RECIPES FOR MEALS THAT CAN BE PREPARED USING YOUR AVAILABLE INVENTORY
+        </div>
+      </div>
+      <div className="row row--align-center row--justify-center">
+        <ol>
+          {recipeSearchResults.map((result) => (
+            <>
+              <br />
+              <li key={`test-recipe-key-${result.id}`}>{result.title}</li>
+              {/* Pull in more info here */}
+            </>
+          ))}
+        </ol>
       </div>
     </>
   );

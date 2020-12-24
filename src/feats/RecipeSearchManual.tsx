@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // import service from '../utils/api-service'; // Bring this back soon
 import { ISpoonacularRecipe } from '../utils/types';
 
