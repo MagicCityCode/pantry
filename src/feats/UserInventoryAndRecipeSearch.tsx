@@ -8,7 +8,7 @@ const UserInventoryAndRecipeSearch: React.FC = () => {
   const [userAvailableInventory, setUserAvailableInventory] = useState<any[]>([]);
   const userId = 1; // Replace this w/ authenticated user's ID
   useEffect(() => {
-    fetch(`/available-inventory/${userId}`, {
+    fetch(`/available-inventory-with-expiration/${userId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
