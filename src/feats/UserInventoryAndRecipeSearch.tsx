@@ -65,19 +65,18 @@ const UserInventoryAndRecipeSearch: React.FC = () => {
           <div className="card--title">
             PLACEHOLDER: DISPLAY CURRENT AVAILABLE INVENTORY OF USER HERE
           </div>
-          {/* <ol>
+          <ol>
             {userAvailableInventory.map((item) => (
               <>
                 <br />
-                For some reason, below key is being rejected as not unique and below JSX items are being rendered as undefined; revisit
                 <li
-                  key={`inventory-result-key-${item.Input_ID}-${item.Ingredient_ID}-${item.Unit_of_Measure}-${item.Quantity}`}
+                  key={`${item.input_id}-${item.ingredient_id}-${item.unit_of_measure}-${item.quantity}`}
                 >
-                  {`${item.Item}, Quantity: ${item.Quantity}, Unit of measure: ${item.Unit_of_Measure}, Days till expiration: ${item.Days_Until_Expiration}`}
+                  {`${item.item}, Quantity: ${item.quantity}, Unit of measure: ${item.unit_of_measure}, Days till expiration: ${item.days_until_expiration}`}
                 </li>
               </>
             ))}
-          </ol> */}
+          </ol>
         </div>
       </div>
       <div className="row row--align-center row--justify-center">
