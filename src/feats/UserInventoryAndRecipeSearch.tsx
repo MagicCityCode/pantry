@@ -70,7 +70,7 @@ const UserInventoryAndRecipeSearch: React.FC = () => {
               <>
                 <br />
                 <li
-                  key={`${item.input_id}-${item.ingredient_id}-${item.unit_of_measure}-${item.quantity}`}
+                  key={`${item.input_id.toString()}-${item.ingredient_id.toString()}-${item.unit_of_measure.toString()}-${item.quantity.toString()}`}
                 >
                   {`${item.item}, Quantity: ${item.quantity}, Unit of measure: ${item.unit_of_measure}, Days till expiration: ${item.days_until_expiration}`}
                 </li>
