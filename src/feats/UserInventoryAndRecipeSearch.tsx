@@ -67,9 +67,14 @@ const UserInventoryAndRecipeSearch: React.FC = () => {
           </div>
           <ol>
             {userAvailableInventory.map((item) => (
-              <li key={item.ingredient_id}>
-                {`${item.item}, Quantity: ${item.quantity}, Unit of measure: ${item.unit_of_measure}, Days till expiration: ${item.days_until_expiration}`}
-              </li>
+              <>
+                <br />
+                <li
+                  key={`${item.input_id.toString()}-${item.ingredient_id.toString()}-${item.unit_of_measure.toString()}-${item.quantity.toString()}`}
+                >
+                  {`${item.item}, Quantity: ${item.quantity}, Unit of measure: ${item.unit_of_measure}, Days till expiration: ${item.days_until_expiration}`}
+                </li>
+              </>
             ))}
           </ol>
         </div>
