@@ -62,27 +62,36 @@ const UserInventoryAndRecipeSearch: React.FC = () => {
             </div>
           </div>
           <br />
-          <div className="card--title">
-            PLACEHOLDER: DISPLAY CURRENT AVAILABLE INVENTORY OF USER HERE
-          </div>
-          <ol>
+          <ul>
             {userAvailableInventory.map((item) => (
               <>
                 <br />
                 <li
-                  key={`${item.input_id.toString()}-${item.ingredient_id.toString()}-${item.unit_of_measure.toString()}-${item.quantity.toString()}`}
+                  // key={`${item.input_id.toString()}-${item.ingredient_id.toString()}-${item.unit_of_measure.toString()}-${item.quantity.toString()}-${item.days_until_expiration.toString()}`}
+                  key={userAvailableInventory[item]}
                 >
-                  {`${item.item}, Quantity: ${item.quantity}, Unit of measure: ${item.unit_of_measure}, Days till expiration: ${item.days_until_expiration}`}
+                  <div className="card-demo">
+                    <div className="card">
+                      <div className="card__header">
+                        <h3>{`${item.item}`}</h3>
+                      </div>
+                      <div className="card__body">
+                        <p>{`Quantity: ${item.quantity}`}</p>
+                        <p>{`Unit of measure: ${item.unit_of_measure}`}</p>
+                      </div>
+                      <div className="card__footer">
+                        <span className="">{`Days till expiration: ${item.days_until_expiration}`}</span>
+                      </div>
+                    </div>
+                  </div>
                 </li>
               </>
             ))}
-          </ol>
+          </ul>
         </div>
       </div>
       <div className="row row--align-center row--justify-center">
-        <div className="card--title">
-          RECIPES FOR MEALS THAT CAN BE PREPARED USING YOUR AVAILABLE INVENTORY
-        </div>
+        <div className="card--title">Recipes you can make from your inventory</div>
       </div>
       <div className="row row--align-center row--justify-center">
         <ol>

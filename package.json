@@ -5,6 +5,8 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
+    "@types/uuid": "^8.3.0",
+    "D": "^1.0.0",
     "cra-template-typescript": "^1.1.1",
     "dotenv": "^8.2.0",
     "line-column": "^1.0.2",
@@ -19,6 +21,7 @@
     "type-fest": "^0.13.1",
     "typescript": "^3.9.7",
     "unirest": "^0.6.0",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
   "proxy": "http://localhost:3000",
